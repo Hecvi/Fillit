@@ -6,7 +6,7 @@
 /*   By: umoff <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 15:15:28 by umoff             #+#    #+#             */
-/*   Updated: 2019/08/03 15:28:23 by klaurine         ###   ########.fr       */
+/*   Updated: 2019/08/03 17:33:33 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int		cycle(char ***matrix, char **map, int block);
 void	third_part(char ***matrix, int num_of_blocks);
 char	**create_area(int side);
 void	free_map(char ***map);
-void	free_matrix(char ****matrix, int num_of_blocks);
+void	free_matrix(char ****matrix);
 
 #endif

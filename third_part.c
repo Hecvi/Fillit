@@ -6,7 +6,7 @@
 /*   By: klaurine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 20:50:13 by klaurine          #+#    #+#             */
-/*   Updated: 2019/08/03 15:30:16 by klaurine         ###   ########.fr       */
+/*   Updated: 2019/08/03 17:33:35 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,5 @@ void	third_part(char ***matrix, int num_of_blocks)
 		i++;
 	}
 	free_map(&map);
-	free_matrix(&matrix, num_of_blocks);
+	free_matrix(&matrix);
 }

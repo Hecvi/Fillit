@@ -6,7 +6,7 @@
 /*   By: klaurine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 15:30:37 by klaurine          #+#    #+#             */
-/*   Updated: 2019/08/03 15:32:02 by klaurine         ###   ########.fr       */
+/*   Updated: 2019/08/03 17:36:56 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,11 @@ void	free_map(char ***map)
 		free(nemap[i]);
 		i++;
 	}
-	free(nemap[i]);
 	free(nemap);
 	nemap = NULL;
 }
 
-void	free_matrix(char ****matrix, int num_of_blocks)
+void	free_matrix(char ****matrix)
 {
 	int		i;
 	int		j;
@@ -63,15 +62,15 @@ void	free_matrix(char ****matrix, int num_of_blocks)
 
 	i = 0;
 	nematrix = *matrix;
-	while (i < num_of_blocks)
+	while (nematrix[i])
 	{
 		j = 0;
-		while (nematrix[i][j])
+		while (j < 5)
 		{
 			free(nematrix[i][j]);
 			j++;
 		}
-		free(nematrix[i][j]);
+		free(nematrix[i]);
 		i++;
 	}
 	free(nematrix[i]);

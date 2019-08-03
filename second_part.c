@@ -6,7 +6,7 @@
 /*   By: klaurine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 15:21:46 by klaurine          #+#    #+#             */
-/*   Updated: 2019/08/03 15:28:42 by klaurine         ###   ########.fr       */
+/*   Updated: 2019/08/03 17:32:37 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,24 @@ char	***create_matrix(int num_of_blocks)
 	char	***matrix;
 
 	i = 0;
-	if (!(matrix = (char ***)malloc(sizeof(char **) * (num_of_blocks + 1))))
+	matrix = (char ***)malloc(sizeof(char **) * (num_of_blocks + 1));
+	if (matrix == NULL)
 		return (NULL);
 	while (i < num_of_blocks)
 	{
 		j = 0;
 		if (!(matrix[i] = (char **)malloc(sizeof(char *) * 5)))
 			return (NULL);
-		while (j < 5)
+		while (j < 4)
 		{
-			if (!(matrix[i][j] = (char *)malloc(sizeof(char) * 5)))
+			if (!(matrix[i][j] = malloc(sizeof(char) * 5)))
 				return (NULL);
 			j++;
 		}
+		matrix[i][j] = NULL;
 		i++;
 	}
-	matrix[num_of_blocks] = NULL;
+	matrix[i] = NULL;
 	return (matrix);
 }
 
