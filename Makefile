@@ -12,31 +12,33 @@
 
 NAME = fillit
 
-SRC = first_part.c second_part.c third_part.c main.c
+SRC = first_part.c second_part.c third_part.c fourth_part.c
 
 OBJ = $(SRC:.c=.o)
 
-LIBFT = includes/libft.a
+LIBFT = libft/libft.a
+
+FLAGS = -Wall -Wextra -Werror
 
 HEADER = -c -I fillit.h
 
 all: $(NAME)
 
 $(OBJ): %.o: %.c
-		@gcc -c -Wall -Werror -Wextra -I includes/ $< -o $@
+		gcc -c $(FLAGS) -I libft/ $< -o $@
 
 $(LIBFT):
-	@make -C includes
+	make -C libft
 
 $(NAME): $(LIBFT) $(OBJ)
-	@gcc $(OBJ) $(LIBFT) -o $(NAME)
+	gcc $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:
-	/bin/rm -f $(OBJ)
-	@make -C includes clean
+	rm -f $(OBJ)
+	make -C libft/ clean
 
 fclean: clean
-	/bin/rm -f $(NAME)
-	@make -C includes fclean
+	rm -f $(NAME)
+	make -C libft/ fclean
 
 re: fclean all
