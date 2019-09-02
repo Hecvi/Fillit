@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_print_bits.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/24 16:47:26 by klaurine          #+#    #+#             */
-/*   Updated: 2019/04/24 16:49:05 by klaurine         ###   ########.fr       */
+/*   Created: 2019/05/03 18:15:17 by klaurine          #+#    #+#             */
+/*   Updated: 2019/08/31 18:03:49 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_print_bits(unsigned char octet)
 {
-	ft_putstr(s);
-	write(1, "\n", 1);
+	int i;
+	int a;
+
+	i = 7;
+	a = 0;
+	while (i >= 0)
+	{
+		a = (octet >> i) & 1;
+		a = a + '0';
+		write(1, &a, 1);
+		i--;
+	}
 }

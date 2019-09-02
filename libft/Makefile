@@ -6,7 +6,7 @@
 #    By: klaurine <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 20:19:56 by klaurine          #+#    #+#              #
-#    Updated: 2019/06/26 19:07:25 by klaurine         ###   ########.fr        #
+#    Updated: 2019/08/31 19:28:40 by klaurine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ SOURCE = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		 ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c \
 		 ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_itoa.c ft_putchar.c \
 		 ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c \
-		 ft_putendl_fd.c ft_putnbr_fd.c ft_strrev.c
+		 ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c \
+		 ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_strrev.c \
+		 ft_sort_array.c ft_swap_bits.c ft_reverse_bits.c ft_print_bits.c \
+		 ft_strndup.c
 
 OBJECTS = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 		  ft_memchr.o ft_memcmp.o ft_strlen.o ft_strdup.o ft_strcpy.o \
@@ -34,7 +37,10 @@ OBJECTS = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 		  ft_strmap.o ft_strmapi.o ft_strequ.o ft_strnequ.o ft_strsub.o \
 		  ft_strjoin.o ft_strtrim.o ft_strsplit.o ft_itoa.o ft_putchar.o \
 		  ft_putstr.o ft_putendl.o ft_putnbr.o ft_putchar_fd.o ft_putstr_fd.o \
-		  ft_putendl_fd.o ft_putnbr_fd.o ft_strrev.o
+		  ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstdelone.o \
+		  ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_strrev.o \
+		  ft_sort_array.o ft_swap_bits.o ft_reverse_bits.o ft_print_bits.o \
+		  ft_strndup.o
 
 HEADERS = ./libft.h
 

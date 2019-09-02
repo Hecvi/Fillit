@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/24 16:47:26 by klaurine          #+#    #+#             */
-/*   Updated: 2019/04/24 16:49:05 by klaurine         ###   ########.fr       */
+/*   Created: 2019/08/26 14:28:50 by klaurine          #+#    #+#             */
+/*   Updated: 2019/08/29 17:58:59 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	ft_putstr(s);
-	write(1, "\n", 1);
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

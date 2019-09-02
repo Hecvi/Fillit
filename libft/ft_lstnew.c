@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 19:30:50 by klaurine          #+#    #+#             */
-/*   Updated: 2019/05/16 20:20:59 by klaurine         ###   ########.fr       */
+/*   Created: 2019/08/21 19:57:29 by klaurine          #+#    #+#             */
+/*   Updated: 2019/08/29 16:54:17 by klaurine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t					i;
-	unsigned char			*dest;
-	const unsigned char		*source;
+	t_list *list;
 
-	i = 0;
-	dest = (unsigned char *)dst;
-	source = (const unsigned char *)src;
-	if (dest == NULL && source == NULL)
+	if (!(list = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
-	else if (source >= dest || dest >= (source + len))
+	if (NULL == content)
 	{
-		while (i < len)
-		{
-			dest[i] = source[i];
-			i++;
-		}
+		list->content = NULL;
+		list->content_size = 0;
 	}
 	else
-		while (i < len)
+	{
+		if (!(list->content = (void *)malloc(content_size)))
 		{
-			dest[len - 1] = source[len - 1];
-			len--;
+			free(list);
+			list = NULL;
+			return (NULL);
 		}
-	return (dst);
+		ft_memcpy(list->content, content, content_size);
+		list->content_size = content_size;
+	}
+	list->next = NULL;
+	return (list);
 }
